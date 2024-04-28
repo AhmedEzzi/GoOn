@@ -41,10 +41,12 @@ locaTxt1=findViewById(R.id.locaTxt1)
         location.onRequestPermissionsResult(requestCode, permissions, grantResults) // ADD THIS LINE INSIDE onRequestPermissionResult
     }
     fun Calc(view: View) {
-
-        val location=AirLocation(this,this,true,0,"")
-        location.start()
-
+        if (locaTxt1.text.toString() == locaTxt2.text.toString() && locaTxt1.text.toString() == locaTxt3.text.toString()) {
+            Toast.makeText(this, "Error: All locations are the same", Toast.LENGTH_SHORT).show()}
+else{
+                val location = AirLocation(this, this, true, 0, "")
+                location.start()
+            }
 
     }
 
